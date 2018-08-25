@@ -8,20 +8,35 @@ export default class HelloCounter extends React.Component {
     this.state = {
       count: 0,
     }
-    this._onPressAddButton = this._onPressAddButton.bind(this);
   }
-  _onPressAddButton() {
+
+  _onPressAddButton = () => {
     // console.log('You tapped the button!')
     this.setState(previousState => {
       return { count: previousState.count + 1 };
     });
   }
+
+  _onPressResetButton = () => {
+    // console.log('You tapped the button!')
+    this.setState({ count: 0 });
+  }
+
+  _onPressSubtractButton = () => {
+    // console.log('You tapped the button!')
+    this.setState(previousState => {
+      return { count: previousState.count - 1 };
+    });
+  }
+
   render() {
     return(
       <View>
         <Text>Hello from Hello Counter</Text>
         <Text>Current Count = {this.state.count}</Text>
-        <Button onPress={this._onPressAddButton} title="add" />
+        <Button onPress={this._onPressSubtractButton} title="-" />
+        <Button onPress={this._onPressResetButton} title="Reset" />
+        <Button onPress={this._onPressAddButton} title="+" />
       </View>
     );
   }
