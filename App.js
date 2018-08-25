@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import HelloComponent from './components/HelloComponent';
+import HelloCounter from './components/HelloCounter';
 
 export default class App extends React.Component {
   render() {
@@ -11,6 +12,7 @@ export default class App extends React.Component {
         <Text>Shake your phone to open the developer menu.</Text>
         <Text>Hello World</Text>
         <HelloComponent location='space' />
+        <HelloCounter />
       </View>
     );
   }
